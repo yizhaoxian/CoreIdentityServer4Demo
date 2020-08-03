@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Oidc-Client</title>
+</head>
+<body>
+    <h1>Silent.html</h1>
+</body>
+</html>
+<script src="lib/oidc/oidc-client.min.js"></script>
+<script>
+    new Oidc.UserManager().signinSilentCallback()
+        .catch((err) => {
+            console.log("refresh", err);
+        });
+</script>

@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "IdentityServer4";
+}
+@model ConsentViewModel
+<style>
+    ul {
+        list-style: none;
+        padding-left: 0
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+</style>
+<div class="container">
+    <div>
+        <h2>@Model.ClientName </h2><span>申请访问以下信息，是否同意授权？</span>
+    </div>
+    <hr />
+    <div class="card" style="display:none">
+        <div class="card-header">
+            AllowedScopes
+        </div>
+        <div class="card-body">
+            <ul>
+                @foreach (var item in Model.AllowedScopes)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div style="width:360px">
+        <form asp-action="Index" asp-controller="consent" asp-area="" method="post">
+            @Html.HiddenFor(l => l.ReturnUrl)
+            <div class="card">
+                <div class="card-header"> 身份认证信息 </div>
+                <div class="card-body">
+                    <ul>
+                        @foreach (var item in Model.identityResources)
+                        {
+                            <li>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" checked disabled class="form-check-input">
+                                    <label class="form-check-label" checked disabled for="exampleCheck1">
+                                        @item.Name -- @item.DisplayName
+                                    </label>
+                                    <input type="hidden" name="identitys" value="@item.Name" />
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> 请求授权资源 </div>
+                <div class="card-body">
+                    <ul>
+                        @foreach (var item in Model.apiResources)
+                        {
+                            <li>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" checked class="form-check-input" name="apis" value="@item.Name">
+                                    <label class="form-check-label" checked disabled for="exampleCheck1">
+                                        @item.Name -- @item.DisplayName
+                                    </label>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+            <label class="custom-checkbox">
+                <input type="checkbox" name="RememberConsent" value="ture" />
+                记住授权
+            </label>
+            <button class="btn btn-primary" name="consentbtn" value="true">同意</button>
+            <button class="btn btn-danger" name="consentbtn" value="false">取消</button>
+        </form>
+    </div>
+</div>

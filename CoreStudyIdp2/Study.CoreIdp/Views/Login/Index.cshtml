@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "登陆";
+}
+@model LoginViewModel
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+<h3>员工登陆</h3>
+<hr />
+<div class="container">
+    <form asp-action="Index" asp-controller="Login" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" name="ReturnUrl" value="@ViewBag.ReturnUrl" />
+        <div class="form-group">
+            <label class="control-label">姓名</label>
+            <input asp-for="@Model.UserName" class="form-control" />
+            <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">密码</label>
+            <input asp-for="@Model.PassWord" class="form-control" />
+            <span asp-validation-for="@Model.PassWord" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">登陆</button>
+    </form>
+</div>
+
+

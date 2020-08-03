@@ -1,0 +1,8 @@
+F:\Work\CoreStudyApi\Study.IRepository\bin\Debug\netcoreapp3.1\Study.IRepository.deps.json
+F:\Work\CoreStudyApi\Study.IRepository\bin\Debug\netcoreapp3.1\Study.IRepository.dll
+F:\Work\CoreStudyApi\Study.IRepository\bin\Debug\netcoreapp3.1\Study.IRepository.pdb
+F:\Work\CoreStudyApi\Study.IRepository\obj\Debug\netcoreapp3.1\Study.IRepository.csproj.CoreCompileInputs.cache
+F:\Work\CoreStudyApi\Study.IRepository\obj\Debug\netcoreapp3.1\Study.IRepository.AssemblyInfoInputs.cache
+F:\Work\CoreStudyApi\Study.IRepository\obj\Debug\netcoreapp3.1\Study.IRepository.AssemblyInfo.cs
+F:\Work\CoreStudyApi\Study.IRepository\obj\Debug\netcoreapp3.1\Study.IRepository.dll
+F:\Work\CoreStudyApi\Study.IRepository\obj\Debug\netcoreapp3.1\Study.IRepository.pdb

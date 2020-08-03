@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Oidc-Client</title>
+    <script src="lib/oidc/oidc-client.min.js"></script>
+</head>
+<body>
+    登陆中...
+</body>
+</html>
+<script>
+    new Oidc.UserManager().signinRedirectCallback().then(function (user) {
+        //console.log("signin response success");
+        //console.log(user)
+        //document.getElementById("message").innerText = JSON.stringify(user);
+        location.href = "/home";
+    }).catch(function (err) {
+        console.log(err);
+    });
+</script>

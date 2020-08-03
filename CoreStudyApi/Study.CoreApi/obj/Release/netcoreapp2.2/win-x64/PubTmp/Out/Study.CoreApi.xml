@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Study.CoreApi</name>
+    </assembly>
+    <members>
+        <member name="M:Study.CoreApi.Controllers.EmployeeController.Get">
+            <summary>
+            获取所有员工
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:Study.CoreApi.Controllers.EmployeeController.Get(System.Int32)">
+            <summary>
+            根据Id 获取员工
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Study.CoreApi.Controllers.EmployeeController.Post(Study.CoreApi.Models.EmployeeParam)">
+            <summary>
+            添加员工
+            </summary>
+            <param name="employee"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Study.CoreApi.JwtSettings.Issuer">
+            <summary>
+            证书颁发者
+            </summary>
+        </member>
+        <member name="P:Study.CoreApi.JwtSettings.Audience">
+            <summary>
+            允许使用的角色
+            </summary>
+        </member>
+        <member name="P:Study.CoreApi.JwtSettings.SecretKey">
+            <summary>
+            加密字符串
+            </summary>
+        </member>
+        <member name="P:Study.CoreApi.JwtPayload.name">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Study.CoreApi.JwtPayload.role">
+            <summary>
+            角色
+            </summary>
+        </member>
+    </members>
+</doc>

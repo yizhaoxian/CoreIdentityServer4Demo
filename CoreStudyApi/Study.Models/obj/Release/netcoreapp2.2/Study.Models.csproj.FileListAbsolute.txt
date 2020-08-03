@@ -1,0 +1,9 @@
+F:\Work\CoreStudyApi\Study.Models\bin\Release\netcoreapp2.2\Study.Models.deps.json
+F:\Work\CoreStudyApi\Study.Models\bin\Release\netcoreapp2.2\Study.Models.dll
+F:\Work\CoreStudyApi\Study.Models\bin\Release\netcoreapp2.2\Study.Models.pdb
+F:\Work\CoreStudyApi\Study.Models\obj\Release\netcoreapp2.2\Study.Models.csprojAssemblyReference.cache
+F:\Work\CoreStudyApi\Study.Models\obj\Release\netcoreapp2.2\Study.Models.csproj.CoreCompileInputs.cache
+F:\Work\CoreStudyApi\Study.Models\obj\Release\netcoreapp2.2\Study.Models.AssemblyInfoInputs.cache
+F:\Work\CoreStudyApi\Study.Models\obj\Release\netcoreapp2.2\Study.Models.AssemblyInfo.cs
+F:\Work\CoreStudyApi\Study.Models\obj\Release\netcoreapp2.2\Study.Models.dll
+F:\Work\CoreStudyApi\Study.Models\obj\Release\netcoreapp2.2\Study.Models.pdb

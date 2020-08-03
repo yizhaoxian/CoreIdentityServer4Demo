@@ -1,0 +1,147 @@
+﻿<style>
+    .box {
+        height: 200px;
+        overflow: auto;
+        border: 1px solid #ccc
+    }
+
+    .btn-box {
+        margin-top: 10px;
+    }
+
+        .btn-box button {
+            margin-right: 10px;
+        }
+</style>
+<div class="row btn-box">
+    <button class="btn btn-primary" onclick="login()">登陆 Implicit</button>
+    <button class="btn btn-primary" onclick="getuser()">获取 User Implicit</button>
+    <button class="btn btn-primary" onclick="getapi()">测试 API Implicit</button>
+    <button class="btn btn-primary" onclick="removeUser()">清除 User Implicit</button>
+    <button class="btn btn-primary" onclick="iframeSignin()">刷新 User Implicit</button>
+</div>
+<hr />
+<div class="row">
+    <h3>User:</h3>
+    <div id="userinfo" class="col-md-12 box">
+    </div>
+</div>
+<div class="row">
+    <h3>API:</h3>
+    <div id="apiresult" class="col-md-12 box">
+    </div>
+</div>
+@section Scripts{
+    <script src="~/lib/oidc/oidc-client.min.js"></script>
+    <script type="text/javascript">
+        Oidc.Log.logger = window.console;
+        Oidc.Log.level = Oidc.Log.DEBUG;
+        var log = function (msg) { console.log(msg); }
+        var testconfig = {
+            authority: "http://localhost:5002",
+            client_id: "mvc client implicit",
+            redirect_uri: "http://localhost:5003/callback.html",
+            response_type: "id_token token",
+            scope: "api1 openid email phone address profile",
+            clockSkew: 0,
+            //启用静默刷新token
+            silent_redirect_uri: "http://localhost:5003/silentref.html",
+            automaticSilentRenew: true,
+        };
+        var mgr = new Oidc.UserManager(testconfig);
+        mgr.events.addUserLoaded(function (user) {
+            console.log("user loaded", user);
+            mgr.getUser().then(function () {
+                console.log("getUser loaded user after userLoaded event fired");
+            });
+        });
+        mgr.events.addUserUnloaded(function () {
+            console.log("user unloaded");
+        });
+        mgr.events.addAccessTokenExpiring(function () {
+            log("Access token expiring..." + new Date());
+        });
+        mgr.events.addSilentRenewError(function (err) {
+            log("Silent renew error: " + err.message);
+        });
+        mgr.events.addUserSignedOut(function () {
+            log("User signed out of OP");
+            mgr.removeUser();
+        });
+        var login = function () {
+            mgr.signinRedirect();
+        };
+        var getuser = function () {
+            mgr.getUser().then(function (user) {
+                log("got user");
+                $('#userinfo').html(JSON.stringify(user));
+            }).catch(function (err) {
+                log(err);
+            });
+        };
+        var removeUser = function () {
+            mgr.removeUser().then(function () {
+                log("user removed");
+            }).catch(function (err) {
+                log(err);
+            });
+        }
+        var iframeSignin = function () {
+            mgr.signinSilent().then(function (user) {
+                log("signed in", user);
+            }).catch(function (err) {
+                log(err);
+            });
+        }
+        var getapi = function (token) {
+            mgr.getUser().then(function (user) {
+                log("get user success");
+                document.getElementById('userinfo').innerHTML = JSON.stringify(user);
+                var settings = {
+                    url: 'http://localhost:5001/api/suibian',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + user.access_token)
+                        console.log("beforeSend", xhr)
+                    },
+                    success: function (res) {
+                        console.log("api result success:", res);
+                        $('#apiresult').html(JSON.stringify(res));
+                    }, error: function (res) {
+                        console.log("api result error:", res);
+                        $('#apiresult').html(res.responseText);
+                    }
+                }
+                $.ajax(settings);
+
+            }).catch(function (err) {
+                log(err);
+            });
+        }; 
+    </script>
+}
+<script>
+    //参数参考
+    var config = {
+        // if we choose to use popup window instead for logins
+        //popup_redirect_uri: window.location.origin + "/popup.html",
+        //popupWindowFeatures: "menubar=yes,location=yes,toolbar=yes,width=1200,height=800,left=100,top=100;resizable=yes",
+
+        // these two will be done dynamically from the buttons clicked, but are
+        // needed if you want to use the silent_renew
+
+        // this will toggle if profile endpoint is used
+        loadUserInfo: false,
+
+        // silent renew will get a new access_token via an iframe
+        // just prior to the old access_token expiring (60 seconds prior)
+        silent_redirect_uri: window.location.origin + "/silent.html",
+        automaticSilentRenew: true,
+
+        // will revoke (reference) access tokens at logout time
+        revokeAccessTokenOnSignout: true,
+
+        // this will allow all the OIDC protocol claims to be visible in the window. normally a client app
+        // wouldn't care about them or want them taking up space
+        filterProtocolClaims: false
+    };
+</script>

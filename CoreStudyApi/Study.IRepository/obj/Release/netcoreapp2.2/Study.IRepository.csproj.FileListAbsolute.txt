@@ -1,0 +1,12 @@
+F:\Work\CoreStudyApi\Study.IRepository\bin\Release\netcoreapp2.2\Study.IRepository.deps.json
+F:\Work\CoreStudyApi\Study.IRepository\bin\Release\netcoreapp2.2\Study.IRepository.dll
+F:\Work\CoreStudyApi\Study.IRepository\bin\Release\netcoreapp2.2\Study.IRepository.pdb
+F:\Work\CoreStudyApi\Study.IRepository\bin\Release\netcoreapp2.2\Study.Models.dll
+F:\Work\CoreStudyApi\Study.IRepository\bin\Release\netcoreapp2.2\Study.Models.pdb
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.csprojAssemblyReference.cache
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.csproj.CoreCompileInputs.cache
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.AssemblyInfoInputs.cache
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.AssemblyInfo.cs
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.csproj.CopyComplete
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.dll
+F:\Work\CoreStudyApi\Study.IRepository\obj\Release\netcoreapp2.2\Study.IRepository.pdb

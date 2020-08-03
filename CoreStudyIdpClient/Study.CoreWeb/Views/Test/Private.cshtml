@@ -1,0 +1,40 @@
+﻿
+@model HomeViewModel 
+<a href="/test/suibian" target="_blank" class="btn btn-success">测试 api1</a>
+<a href="/test/system" target="_blank" class="btn btn-success">测试 角色访问</a>
+<a href="/test/bob" target="_blank" class="btn btn-success">测试 策略访问</a>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h2>Claims</h2>
+            </div>
+            <div class="card-body">
+                <dl>
+                    @foreach (var claim in User.Claims)
+                    {
+                        <dt>@claim.Type</dt>
+                        <dd>@claim.Value</dd>
+                    }
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h2>Token</h2>
+            </div>
+            <div class="card-body">
+                <dl>
+                    @foreach (var item in Model.Infos)
+                    {
+                        <dt>@item.Key</dt>
+                        <dd>@item.Value</dd>
+                    }
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

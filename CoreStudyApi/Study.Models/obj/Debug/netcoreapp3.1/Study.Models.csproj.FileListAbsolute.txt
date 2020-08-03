@@ -1,0 +1,8 @@
+F:\Work\CoreStudyApi\Study.Models\bin\Debug\netcoreapp3.1\Study.Models.deps.json
+F:\Work\CoreStudyApi\Study.Models\bin\Debug\netcoreapp3.1\Study.Models.dll
+F:\Work\CoreStudyApi\Study.Models\bin\Debug\netcoreapp3.1\Study.Models.pdb
+F:\Work\CoreStudyApi\Study.Models\obj\Debug\netcoreapp3.1\Study.Models.csproj.CoreCompileInputs.cache
+F:\Work\CoreStudyApi\Study.Models\obj\Debug\netcoreapp3.1\Study.Models.AssemblyInfoInputs.cache
+F:\Work\CoreStudyApi\Study.Models\obj\Debug\netcoreapp3.1\Study.Models.AssemblyInfo.cs
+F:\Work\CoreStudyApi\Study.Models\obj\Debug\netcoreapp3.1\Study.Models.dll
+F:\Work\CoreStudyApi\Study.Models\obj\Debug\netcoreapp3.1\Study.Models.pdb

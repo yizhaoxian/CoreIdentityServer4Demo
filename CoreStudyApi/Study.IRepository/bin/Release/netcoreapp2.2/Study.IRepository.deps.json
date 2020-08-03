@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "Study.IRepository/1.0.0": {
+        "dependencies": {
+          "Study.Models": "1.0.0"
+        },
+        "runtime": {
+          "Study.IRepository.dll": {}
+        }
+      },
+      "Study.Models/1.0.0": {
+        "runtime": {
+          "Study.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Study.IRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Study.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
